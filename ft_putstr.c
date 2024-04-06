@@ -2,6 +2,11 @@
 
 int ft_putstr(char* s)
 {
+    if (s ==NULL)
+    {
+        ft_putstr("(null)");
+        return (6);
+    }
     int i;
 
     i = 0;

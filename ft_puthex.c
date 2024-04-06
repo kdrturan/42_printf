@@ -1,10 +1,9 @@
 #include "ft_printf.h"
 
 
-int ft_PUTHEX(int n)
+int ft_PUTHEX(long number)
 {
     int count;
-    long number = (long)n;
     char numbers[16] = {'0', '1', '2' , '3' , '4', '5' , '6' , '7' , '8' , '9' ,'A', 'B' , 'C' , 'D' , 'E' , 'F'};
 
     count = 0;
@@ -19,10 +18,9 @@ int ft_PUTHEX(int n)
 }
 
 
-int ft_puthex(int n)
+int ft_puthex(long number)
 {
     int count;
-    long number = (long)n;
     char numbers[16] = {'0', '1', '2' , '3' , '4', '5' , '6' , '7' , '8' , '9' ,'a', 'b' , 'c' , 'd' , 'e' , 'f'};
     
     count = 0;

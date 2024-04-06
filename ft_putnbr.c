@@ -12,7 +12,7 @@ int ft_putnbr(int n)
     }
     if (n < 0)
     {
-        ft_putchar('-');
+        count += ft_putchar('-');
         n *= -1;
     }
     if (n > 9)
