@@ -6,10 +6,15 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-void determiner(const char *str, va_list vlist);
-void ft_printf(const char *str, ...);
-void ft_putchar(char c);
-void ft_putnbr(int n);
-void ft_putstr(char* s);
+int determiner(const char *str, va_list vlist);
+int ft_printf(const char *str, ...);
+int ft_putchar(char c);
+int ft_putnbr(int n);
+int ft_putstr(char* s);
+int ft_PUTHEX(int n);
+int ft_puthex(int n);
+int ft_putunbr(unsigned int n);
+int ft_putstr(char* s);
+int ft_putaddress(unsigned long number);
 
 #endif

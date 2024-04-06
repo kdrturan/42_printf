@@ -16,7 +16,7 @@ int determiner(const char *str, va_list vlist)
     if (*str == 'i')
         count += ft_putnbr(va_arg(vlist, int));
     if (*str == 'u')
-        count += ft_putunbr(unsigned int n);
+        count += ft_putunbr(va_arg(vlist, unsigned int));
     if (*str == 'x')
         count += ft_puthex(va_arg(vlist, int));
     if (*str == 'X')

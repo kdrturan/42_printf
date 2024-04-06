@@ -8,7 +8,7 @@ int ft_putnbr(int n)
     if (n == -2147483648)
     {
         write(1,"-2147483648",11);
-        return;
+        return (11);
     }
     if (n < 0)
     {
