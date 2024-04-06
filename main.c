@@ -1,6 +1,9 @@
 #include "ft_printf.h"
-
+#include <stdio.h>
 int main()
 {
-    ft_printf("kadir %d %i %u %s %c",123,255,482,"kadir",'a');
+    int*a;
+    ft_printf("c = %c\ns = %s\np = %p\nd = %d\ni = %i\nu = %u\nx = %x\nX = %X\n",'a',"kadir",a,-258,658,699,19,15);
+    printf ("***********************************\n");
+    printf("c = %c\ns = %s\np = %p\nd = %d\ni = %i\nu = %u\nx = %x\nX = %X\n",'a',"kadir",a,-258,658,699,19,15);
 }
