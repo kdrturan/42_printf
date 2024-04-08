@@ -3,6 +3,7 @@
 
 int ft_PUTHEX(long number)
 {
+    write(1,"hex",3);
     int count;
     char numbers[16] = {'0', '1', '2' , '3' , '4', '5' , '6' , '7' , '8' , '9' ,'A', 'B' , 'C' , 'D' , 'E' , 'F'};
 

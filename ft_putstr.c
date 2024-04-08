@@ -2,7 +2,7 @@
 
 int ft_putstr(char* s)
 {
-    if (s ==NULL)
+    if (s == NULL)
     {
         ft_putstr("(null)");
         return (6);
