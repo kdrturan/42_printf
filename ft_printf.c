@@ -34,7 +34,7 @@ void	detflags(const char **str,pflags *flags)
 
 void determiner(const char **str, va_list vlist, int* count)
 {
-	pflags flags = {0};
+	pflags* flags = calloc(1, sizeof(pflags));
     if (*(*str) == '%')
     {
         *count += ft_putpercent();
@@ -58,9 +58,10 @@ void determiner(const char **str, va_list vlist, int* count)
         *count += ft_PUTHEX(va_arg(vlist, long));
     else
 	{
-		detflags(str,&flags);
-        getfnc(&flags,vlist,count,**str);
+		detflags(str,flags);
+        getfnc(flags,vlist,count,**str);
 	}
+    free(flags);
 }
 
 
