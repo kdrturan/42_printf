@@ -1,9 +1,6 @@
 #include "ft_printf.h"
 
 
-
-
-
 void    flags_minus(pflags* flags,int *digit,int *number,int* count)
 {
     if (flags -> zero && flags -> dot)
@@ -73,7 +70,7 @@ void flags_MDotArea(int* digit,pflags* flags,int* number,int* count)
     else
         flags_Area(digit,flags,count);
     if (*number != 0 || flags -> dotarea != 0)
-        ft_putnbr_minus(*number);
+        *count += ft_putnbr_minus(*number);
     while (i++ < loop)
         *count += ft_putchar(' ');
 }

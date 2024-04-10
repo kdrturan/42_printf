@@ -1,11 +1,7 @@
 #include "ft_printf.h"
 #include <stdio.h>
-pflags*	detflags(const char **str)
+void	detflags(const char **str,pflags *flags)
 {
-	pflags* flags = calloc(1, sizeof(pflags));
-    if (flags == NULL) {
-        return NULL;
-    }
 	if (*(*str) == '0')
     {
         flags -> zero = 1;
@@ -31,7 +27,6 @@ pflags*	detflags(const char **str)
         }
 		(*str)++;
 	}
-	return (flags);
 }
 
 
@@ -39,8 +34,7 @@ pflags*	detflags(const char **str)
 
 void determiner(const char **str, va_list vlist, int* count)
 {
-	int (*funcPtr)(pflags*,va_list,int*);
-	pflags *flags;
+	pflags* flags = calloc(1, sizeof(pflags));
     if (*(*str) == '%')
     {
         *count += ft_putpercent();
@@ -64,12 +58,10 @@ void determiner(const char **str, va_list vlist, int* count)
         *count += ft_PUTHEX(va_arg(vlist, long));
     else
 	{
-		flags = detflags(str);
-		funcPtr = getfnc(*(*str));
-        if (funcPtr == NULL)
-            return;
-		funcPtr(flags, vlist , count);
+		detflags(str,flags);
+        getfnc(flags,vlist,count,**str);
 	}
+    free(flags);
 }
 
 

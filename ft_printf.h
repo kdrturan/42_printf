@@ -1,10 +1,10 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-#include <stdarg.h>
+# include <stdarg.h>
 # include <stddef.h>
 # include <stdlib.h>
-#include <stdint.h>
+# include <stdint.h>
 # include <unistd.h>
 
 
@@ -36,13 +36,13 @@ void    flags_dot(pflags* flags,int* digit,int* number,int* count);
 int ft_zeroatoi(const char** str);
 void flags_DotZArea(int* digit,pflags* flags,int* number,int* count);
 void flags_Area(int* digit,pflags* flags,int* count);
-pflags*	detflags(const char **str);
+void	detflags(const char **str,pflags *flags);
 int find_digit(int n);
 int find_digitX(long number);
 int dflag(pflags* flags, va_list vlist,int* count);
 int xflag(pflags* flags, va_list vlist,int* count);
 int Xflag(pflags* flags, va_list vlist,int* count);
-int (*getfnc(const char str))(pflags*, va_list,int*);
+void getfnc(pflags* flags,va_list vlist,int* count,const char str);
 int ft_atoi(const char** str);
 int ft_putaddress(uintptr_t number);
 void determiner(const char **str, va_list vlist, int* count);

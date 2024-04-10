@@ -55,16 +55,16 @@ int dflag(pflags* flags, va_list vlist,int* count)
     return (1);
 }
 
-int (*getfnc(const char str))(pflags*, va_list,int*)
+void getfnc(pflags* flags,va_list vlist,int* count,const char str)
 {
     if (str == 'd' || str == 'i')
-        return (dflag);
+            dflag(flags,vlist,count);
     else if (str == 'x')
-        return (xflag);
+        xflag(flags,vlist,count);
     else if (str == 'X')
-        return (Xflag);
+        Xflag(flags,vlist,count);
     else 
-        return (Xflag);
+        Xflag(flags,vlist,count);
 }
 
 int xflag(pflags* flags, va_list vlist,int* count)
