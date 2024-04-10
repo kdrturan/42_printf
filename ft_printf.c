@@ -6,8 +6,11 @@ pflags*	detflags(const char **str)
     if (flags == NULL) {
         return NULL;
     }
-	if (*(*str) == '0' || *(*str) == '.')
-			flags -> zero = 1;
+	if (*(*str) == '0')
+    {
+        flags -> zero = 1;
+        flags-> zeroarea = ft_zeroatoi(str);
+    }	
 	while ((*(*str) != 'd' && *(*str) != 'i' && *(*str) != 's'&& *(*str) != 'x' && *(*str) != 'X') && *(*str))
 	{
 		if (*(*str) == '#')
@@ -22,10 +25,9 @@ pflags*	detflags(const char **str)
 			flags -> area = ft_atoi(str);
 		else if (*(*str) == '.')
         {
-            flags -> zero = 1;
             flags -> dot = 1;
             (*str)++;
-			flags -> area = ft_atoi(str);
+			flags -> dotarea = ft_atoi(str);
         }
 		(*str)++;
 	}
@@ -64,8 +66,10 @@ void determiner(const char **str, va_list vlist, int* count)
 	{
 		flags = detflags(str);
 		funcPtr = getfnc(*(*str));
+        if (funcPtr == NULL)
+            return;
 		funcPtr(flags, vlist , count);
-	} 
+	}
 }
 
 

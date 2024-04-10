@@ -41,18 +41,17 @@ int dflag(pflags* flags, va_list vlist,int* count)
 
     number = va_arg(vlist, int);
     digit = find_digit(number);
-    if (number < 0)
-        digit++;
-    if (flags->dot && number == 0 && !(flags -> area))
-        return 0;
-    flags_dot(&digit, flags, &number);
-    flags_Area(&digit, flags);
-    if (number == -2147483648 && flags->dot)
-    {
-        ft_putnbr(214748364);
-        number = 8;
-    }
-    *count += ft_putnbr(number);
+    if (flags->left)
+        flags_minus(flags,&digit,&number,count);
+    else if (flags -> zero && flags -> dot)
+        flags_DotZArea(&digit,flags,&number,count);
+    else if (flags->dot)
+        flags_dot(flags,&digit,&number,count);
+    else if (flags -> zero)
+        flags_zero(&digit,flags,number,count);
+    else if (flags -> area)
+        flags_Areaf(&digit,flags,number,count);
+    
     return (1);
 }
 

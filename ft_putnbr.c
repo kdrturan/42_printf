@@ -40,3 +40,24 @@ int ft_putunbr(unsigned int n)
         return (count);
 }
         
+int ft_putnbr_minus(int n)
+{
+    int count;
+
+    count = 0;
+    if (n == -2147483648)
+    {
+        write(1,"2147483648",10);
+        return (10);
+    }
+    if (n < 0)
+        n *= -1;
+    if (n > 9)
+    {
+	    count += ft_putnbr(n / 10);
+        count += ft_putchar(((n % 10) + 48));
+    }
+    else
+	    count += ft_putchar(((n % 10) + 48));
+    return (count);
+}
