@@ -10,8 +10,11 @@ MSRCS = ft_printf.c		\
 		ft_puthex.c		\
 		ft_setstr_bonus.c \
 		ft_putflags.c	\
-
-
+		ft_cflag_bonus.c \
+		ft_flagX_bonus.c	\
+		ft_flagp_bonus.c	\
+		ft_flagu_bonus.c 	\
+		
 BSRCS = ft_setstr_bonus.c		\
 		
 
